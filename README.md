@@ -16,7 +16,10 @@ This is an example of how you may give instructions on setting up your project l
 ```http
 https://blog.jetbrains.com/pycharm/2022/03/2021-3-3/
 ```
-
+2.1 . Download Python
+```
+https://www.python.org/downloads/
+```
 3. Go to TesvanHomework folder open CMD from there and type
 ```
 python -m venv venv
