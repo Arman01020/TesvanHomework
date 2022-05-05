@@ -1,7 +1,5 @@
 # TesvanHomework
 This is a simple automation testing task given to Tesvans students.
-# TesvanHomework
-This is a simple automation testing task given to Tesvans students.
 
 ## Getting Started
 
