@@ -3,7 +3,7 @@ import unittest
 from Pages.TextBoxPage import TextBoxPage
 from selenium.webdriver.common.by import By
 
-PATH = "C:/Users/User/PycharmProjects/TesvanHomework/Drivers/chromedriverwin32.exe"
+PATH = "../Drivers/chromedriverwin32.exe"
 driver = webdriver.Chrome(PATH)
 
 
@@ -20,7 +20,7 @@ class loginTest(unittest.TestCase):
         driver.get("https://demoqa.com/text-box")
         title_of_web_page = driver.title
         self.assertEqual("ToolsQA", title_of_web_page, "Webpages titles are not same")
-        page_name = driver.find_element(by=By.CLASS_NAME, value="main-header").text
+        page_name = driver.find_element(By.CLASS_NAME, "main-header").text
         assert 'Text Box' in page_name  # Check that page is opened
         submit = TextBoxPage(driver)
         submit.enter_Full_Name("TesvanTest")  # Fill in all fields on the page
