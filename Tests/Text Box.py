@@ -5,7 +5,10 @@ from selenium.webdriver.common.by import By
 
 PATH = "../Drivers/chromedriverwin32.exe"
 driver = webdriver.Chrome(PATH)
-
+Name="TesvanTest"
+Email="Tesvan@mail.ru"
+Current_Address= "Andraniki154"
+Permanent_Address= "Andraniki 90"
 
 class loginTest(unittest.TestCase):
 
@@ -23,15 +26,15 @@ class loginTest(unittest.TestCase):
         page_name = driver.find_element(By.CLASS_NAME, "main-header").text
         assert 'Text Box' in page_name  # Check that page is opened
         submit = TextBoxPage(driver)
-        submit.enter_Full_Name("TesvanTest")  # Fill in all fields on the page
-        submit.enter_Email("Tesvan@mail.ru")
-        submit.enter_Current_Address("Andraniki154")
-        submit.enter_Permanent_Address("Andraniki 90")
+        submit.enter_Full_Name(Name)  # Fill in all fields on the page
+        submit.enter_Email(Email)
+        submit.enter_Current_Address(Current_Address)
+        submit.enter_Permanent_Address(Permanent_Address)
         submit.click_Submit_button()
 
-        assert "Name:TesvanTest" in submit.reg_name_text()  # Check a new item is added with correct information
-        assert "Email:Tesvan@mail.ru" in submit.reg_email_text()
-        assert "Permananet Address :Andraniki 90" in submit.reg_Permananet_Address_text()
+        assert f"Name:{Name}" in submit.reg_name_text()  # Check a new item is added with correct information
+        assert f"Email:{Email}" in submit.reg_email_text()
+        assert f"Permananet Address :{Permanent_Address}" in submit.reg_Permananet_Address_text()
 
     @classmethod
     def tearDownClass(cls):
